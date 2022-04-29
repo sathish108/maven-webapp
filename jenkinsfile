@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+    stages {
+        stage("clone scm repo") {
+            steps {
+                git credentialsId: 'github_credentials', url: 'https://github.com/sathish108/maven-webapp'
+                ls -al  
+            }
+        }
+    }
+}

@@ -8,8 +8,8 @@ pipeline {
         }
         stage("build docker image") {
             steps {
-                docker build -t webapp:v1 .
-                docker run -itd --name server webapp:v1
+                sh "docker build -t webapp:v1 ."
+                sh "docker run -itd --name server webapp:v1"
             }
         }
     }

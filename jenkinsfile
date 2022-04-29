@@ -6,5 +6,11 @@ pipeline {
                 git credentialsId: 'github_credentials', url: 'https://github.com/sathish108/maven-webapp'
             }
         }
+        stage("build docker image") {
+            steps {
+                docker build -t webapp:v1 .
+                docker run -itd --name server webapp:v1
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@ FROM centos
 
 MAINTAINER rns@rnstech.com
 
-RUN sudo yum update -y
+RUN yum update -y
 RUN yum -y install java
 RUN java -version
 
